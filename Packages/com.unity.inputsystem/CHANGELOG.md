@@ -106,6 +106,7 @@ however, it has to be formatted properly to pass verification tests.
 - Removed `CurveProcessor` as it was not implemented.
 - Renamed XInputControllerOSX to a more descriptive XboxGamepadMacOS.
 - Added default biundings for the keyboard in the tanks demo.
+- Removed the unnecessary UI EventSystem from the game scene in the tanks demo.
 
 #### Actions
 

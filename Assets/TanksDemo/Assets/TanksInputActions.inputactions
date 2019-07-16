@@ -7,58 +7,43 @@
             "actions": [
                 {
                     "name": "Gas",
+                    "type": "Value",
                     "id": "fa57f103-ab70-42f4-8eae-810795ccd5e1",
-                    "expectedControlLayout": "Axis",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Brake",
+                    "type": "Value",
                     "id": "b7baef12-09f9-4ee9-ac23-9543eb6eead3",
-                    "expectedControlLayout": "Axis",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Turret",
+                    "type": "Value",
                     "id": "cdfa0440-2012-4dea-a37a-db07b0d31f6a",
-                    "expectedControlLayout": "Axis",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Fire",
+                    "type": "Button",
                     "id": "0faccb2c-e5c0-4722-97bf-f41bd00884ce",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
-                    "bindings": []
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "Pause",
+                    "type": "Button",
                     "id": "020abfe6-6083-46ec-9487-3aa2ecb330f3",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
-                    "bindings": []
+                    "interactions": "Press(behavior=2)"
                 }
             ],
             "bindings": [
@@ -68,11 +53,21 @@
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "Brake",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "570d4e05-1db6-48c1-b5af-859620f7380f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -83,8 +78,40 @@
                     "groups": ";Gamepad",
                     "action": "Turret",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "ddda73f1-7511-4d4d-913f-3cc09ab0620c",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turret",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "2943392c-1ba7-41cb-8a9a-082667ae1a1c",
+                    "path": "<Keyboard>/#(A)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Turret",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0daf5aa3-cd87-4056-a986-fbf1355105b3",
+                    "path": "<Keyboard>/#(D)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Turret",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -95,8 +122,18 @@
                     "groups": ";Gamepad",
                     "action": "Fire",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ca8dd79-2f61-47be-a4a4-5612fcedc59f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -107,8 +144,18 @@
                     "groups": ";Gamepad",
                     "action": "Pause",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6f29e81-f59f-4c93-a84d-0b1fe1e6a1bc",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -116,11 +163,21 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": ";Gamepad;Keyboard&Mouse",
                     "action": "Gas",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee1caa67-82a2-494e-87ab-373cddf6f371",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
+                    "action": "Gas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -130,58 +187,43 @@
             "actions": [
                 {
                     "name": "Navigate",
+                    "type": "Value",
                     "id": "21a0d5eb-b5b8-44c0-840c-0d92504df067",
-                    "expectedControlLayout": "Vector2",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Submit",
+                    "type": "Button",
                     "id": "ce1414e8-72a9-4869-bdd5-799643821223",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Cancel",
+                    "type": "Button",
                     "id": "ab41bb40-603b-44fe-82a0-4c534e19e603",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Point",
+                    "type": "Value",
                     "id": "5d906fbb-d21c-45c0-885c-0ce8b33c67bf",
-                    "expectedControlLayout": "Vector2",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 },
                 {
                     "name": "Click",
+                    "type": "Button",
                     "id": "9822b927-f006-4158-a954-6a7921d46d87",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "bindings": []
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -194,8 +236,7 @@
                     "groups": ";Gamepad",
                     "action": "Navigate",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -206,8 +247,7 @@
                     "groups": ";Gamepad",
                     "action": "Submit",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -218,8 +258,7 @@
                     "groups": ";Gamepad",
                     "action": "Cancel",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -230,8 +269,7 @@
                     "groups": ";Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -242,8 +280,7 @@
                     "groups": ";Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 }
             ]
         }

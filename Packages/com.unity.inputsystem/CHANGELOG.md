@@ -105,6 +105,7 @@ however, it has to be formatted properly to pass verification tests.
 - Made all `InputProcessor` implementation internal, as access to these types is exposed only through text mode representations.
 - Removed `CurveProcessor` as it was not implemented.
 - Renamed XInputControllerOSX to a more descriptive XboxGamepadMacOS.
+- Added default biundings for the keyboard in the tanks demo.
 
 #### Actions
 

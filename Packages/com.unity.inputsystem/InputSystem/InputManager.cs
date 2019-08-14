@@ -39,7 +39,7 @@ using UnityEngine.InputSystem.Editor;
 namespace UnityEngine.InputSystem
 {
     using DeviceChangeListener = Action<InputDevice, InputDeviceChange>;
-    using DeviceStateChangeListener = Action<InputDevice>;
+    using DeviceStateChangeListener = Action<InputDevice, InputEventPtr>;
     using LayoutChangeListener = Action<string, InputControlLayoutChange>;
     using EventListener = Action<InputEventPtr, InputDevice>;
     using UpdateListener = Action;
@@ -2288,8 +2288,7 @@ namespace UnityEngine.InputSystem
             //       in the buffer and having older timestamps will get rejected.
 
             var currentTime = updateType == InputUpdateType.Fixed ? m_Runtime.currentTimeForFixedUpdate : m_Runtime.currentTime;
-            var timesliceEvents = false;
-            timesliceEvents = gameIsPlayingAndHasFocus && m_Settings.timesliceEvents; // We never timeslice for editor updates.
+            var timesliceEvents = gameIsPlayingAndHasFocus && InputSystem.settings.updateMode == InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
 
             // Early out if there's no events to process.
             if (eventBuffer.eventCount <= 0)
@@ -2845,7 +2844,7 @@ namespace UnityEngine.InputSystem
 
             // Notify listeners.
             for (var i = 0; i < m_DeviceStateChangeListeners.length; ++i)
-                m_DeviceStateChangeListeners[i](device);
+                m_DeviceStateChangeListeners[i](device, eventPtr);
 
             // Now that we've committed the new state to memory, if any of the change
             // monitors fired, let the associated actions know.
